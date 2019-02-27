@@ -3,9 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-
-
-int main(int argc,const char *argv[])
+int main(int argc, const char *argv[])
 
 {
 
