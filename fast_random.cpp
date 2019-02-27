@@ -6,10 +6,9 @@
 
 using namespace std;
 
-
 uint32_t state = 123456;
 
-uint32_t getRandom() 
+uint32_t getRandom()
 {
     /* Algorithm "xor" from p. 4 of Marsaglia, "Xorshift RNGs" */
     uint32_t x = state;
@@ -22,24 +21,21 @@ uint32_t getRandom()
 
 int getRandomInt(int bound)
 {
-    return(getRandom()%bound);
+    return (getRandom() % bound);
 }
-
-
 
 int main()
 {
     int tab[10] = {0};
 
-    for (int i=0; i<1000; i++)
+    for (int i = 0; i < 1000; i++)
     {
-        tab[getRandomInt(10)] +=1 ;
+        tab[getRandomInt(10)] += 1;
     }
 
-    for (int i=0; i<10; i++)
+    for (int i = 0; i < 10; i++)
     {
-        cout << tab[i] << "   " ;
+        cout << tab[i] << "   ";
     }
     cout << endl;
-    
 }
