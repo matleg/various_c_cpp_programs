@@ -9,7 +9,8 @@ using namespace std;
 
 uint32_t state = 123456;
 
-uint32_t getRandom() {
+uint32_t getRandom() 
+{
     /* Algorithm "xor" from p. 4 of Marsaglia, "Xorshift RNGs" */
     uint32_t x = state;
     x ^= x << 13;
@@ -19,7 +20,8 @@ uint32_t getRandom() {
     return x;
 }
 
-int getRandomInt(int bound){
+int getRandomInt(int bound)
+{
     return(getRandom()%bound);
 }
 

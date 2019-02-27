@@ -8,6 +8,11 @@ int main(int argc,const char *argv[])
 
 {
     srand(0);  // seed
+    /* or : 
+    int seed;
+    seed = time(NULL);  // seconds since Jan 1, 1970
+    srand(seed);
+    */
 
     printf("rand int between 0 and 4:\n");
     for (int i=0; i<20; i++)
@@ -24,7 +29,7 @@ int main(int argc,const char *argv[])
 
     printf("\n RAND_MAX value: %d \n:", RAND_MAX);
 
-    printf("\n\nrand between 0 and 1 :\n");
+    printf("\n\nrand between 0 and 1 inclusive :\n");
     
     for (int i=0; i<20; i++)
     {

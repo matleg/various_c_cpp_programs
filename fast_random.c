@@ -8,26 +8,23 @@ void fast_srand(int seed)
 {
     g_seed = seed;
 }
-int fastrand() 
+int fastrand()
 {
     //fastrand routine returns one integer, similar output value range as C lib.
-    g_seed = (214013*g_seed+2531011);
-    return (g_seed>>16)&0x7FFF;
+    g_seed = (214013 * g_seed + 2531011);
+    return (g_seed >> 16) & 0x7FFF;
 }
 int fastRandInt(int maxSize)
 {
     return fastrand() % maxSize;
 }
 
-
 int main()
-{   
+{
 
-    for (int r=0; r < 100; r++)
+    for (int r = 0; r < 100; r++)
     {
-        int m = fastRandInt(10) ;
+        int m = fastRandInt(10);
         printf("%d", m);
     };
-    
 }
-
