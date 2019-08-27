@@ -84,7 +84,7 @@ void switchValues(int &a, int &b)
     b = tmp;
 }
 
-// overloading operator
+// function overloading
 void switchValues(int *pa, int *pb)
 {
     int tmp = *pa;
