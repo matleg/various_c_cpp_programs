@@ -99,7 +99,7 @@ int main() // global entry point, only one
 
     float *&rpf = pf;
 
-    cout << "reference sur un poitneru: " << rpf << " et donc sur la valeur" << *rpf << endl;
+    cout << "reference sur un pointeur: " << rpf << " et donc sur la valeur" << *rpf << endl;
     cout << "pointeur: " << *&rpf << endl;
 
     // modif une reference, c'est souvent une mauvaise idee
