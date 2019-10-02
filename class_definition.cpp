@@ -6,7 +6,20 @@ using namespace std;
 
 void Person::WhoAmI()
 {
-    cout << typeid(this).name() << ": my name is " << name_ << "  and I am " << findAge() << "yo\n";
+    string txtCivility;
+    switch (civility)
+    {
+    case Mr:
+        txtCivility = "mister";
+        break;
+    case Ms:
+        txtCivility = "Miss";
+        break;
+    default:
+        txtCivility = " nothing ";
+    }
+
+    cout << typeid(this).name() << ": my name is " << txtCivility << "  " << name_ << "  and I am " << findAge() << " y.o.\n";
 }
 
 int Person::findAge() const
@@ -14,8 +27,26 @@ int Person::findAge() const
     return age; // method is declared const, impossible to modify anything
 }
 
+int Person::getLifeExpectancy()
+{
+    return lifeExpectancy;
+}
+int Person::getPersonLE()
+{
+    if (civility == Person::Mr)
+        return Person::getLifeExpectancy() - 5;
+    return Person::getLifeExpectancy() + 5;
+}
+int Person::lifeExpectancy = 80;
+
+int Person::getCivility()
+{
+    return civility;
+}
+
 int main()
 {
+
     //on the pile
     Person p;
 
@@ -40,8 +71,15 @@ int main()
 
     p2->name_ = "Oliver twist";
     p2->age = 22;
+    p2->civility = Person::Ms;
 
     p2->WhoAmI();
+
+    cout << " human " << Person::getLifeExpectancy() << endl;
+
+    cout << " O T  " << p2->getPersonLE() << endl;
+
+    cout << " human from O T " << p2->getLifeExpectancy() << endl;
 
     delete (p2);
 
