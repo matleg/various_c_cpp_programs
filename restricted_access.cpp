@@ -56,8 +56,6 @@ public:
     // constructor by assignment of a copy. Override '=' operator
     Person &operator=(const Person &SourcePerson);
 
-
-    // if not friend, substitution failed as restricted access
     friend ostream &operator<<(ostream &os, Person &p)
     {
         os << " person : " << p.name_ << " , age " << p.age;
@@ -202,7 +200,7 @@ public:
 
     friend int compareWages(Employee &e1, Employee &e2); // recognize signature everywhere
 
-    //define as friend function the override of <<
+    // define as friend function the override of <<
     // this operator does not belong to the class, so override  must be declared friend
     friend ostream &operator<<(ostream &os, Employee &);
 
@@ -295,7 +293,6 @@ int main()
     cout << p10 << endl;
 
     // friend class
-
     EmployeeFactory fe;
 
     Employee emp3 = fe.createEmployer(777, "duke n ", Person::Mr, 50, 30000);
