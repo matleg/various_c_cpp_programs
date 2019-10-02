@@ -3,13 +3,7 @@
 #include <array>
 #include "Address.h"
 
-
 using namespace std;
-
-
-#ifndef INC_08_CLASSES_PERSON_H
-#define INC_08_CLASSES_PERSON_H
-
 
 class Person2
 {
@@ -18,51 +12,39 @@ class Person2
     static int lifeExpectancy;
 
     //private method
-    int findAge() const;  // const to be sure that age is not modified
-
+    int findAge() const; // const to be sure that age is not modified
 
     // define public fields of instances
-    public:
-        string name_;
+public:
+    string name_;
 
-        int age;
+    int age;
 
-        void WhoAmI();
+    void WhoAmI();
 
-        const static int Mr = 0;
-        const static int Ms = 1;
-        int civility;
+    const static int Mr = 0;
+    const static int Ms = 1;
+    int civility;
 
-        static int getLifeExpectancy();
+    static int getLifeExpectancy();
 
-        int getPersonLE();
+    int getPersonLE();
 
-        int getCivility();
+    int getCivility();
 
-        Address *address;
+    Address *address;
 
-        // constructor
-        Person2();
-        Person2(string name, int civility, int age);
-        Person2(string name, int civility, int age, int no, string street, string city);
+    // constructor
+    Person2();
+    Person2(string name, int civility, int age);
+    Person2(string name, int civility, int age, int no, string street, string city);
 
+    //destructor
+    ~Person2();
 
-        //destructor
-        ~Person2();
+    // constructor by copy
+    Person2(const Person2 &p); // const to prevent any modification of the person in argument
 
-
-
-        // constructor by copy
-        Person2(const Person2& p);   // const to prevent any modification of the person in argument
-
-        // constructor by assignment of a copy. Override '=' operator
-        Person2& operator = (const Person2& SourcePerson);
-
-
-
-
-
+    // constructor by assignment of a copy. Override '=' operator
+    Person2 &operator=(const Person2 &SourcePerson);
 };
-
-
-#endif //INC_08_CLASSES_PERSON_H
