@@ -59,7 +59,7 @@ public:
         {
             grade = g;
         }
-    };  // need a ";" after the constructor
+    } 
 };
 
 /* converting constructor
