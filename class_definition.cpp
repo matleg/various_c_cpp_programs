@@ -2,6 +2,8 @@
 #include "Person.h"
 #include <typeinfo>
 
+using namespace std;
+
 void Person::WhoAmI()
 {
     cout << typeid(this).name() << ": my name is " << name_ << "  and I am " << findAge() << "yo\n";
@@ -12,10 +14,8 @@ int Person::findAge() const
     return age; // method is declared const, impossible to modify anything
 }
 
-
 int main()
 {
-
     //on the pile
     Person p;
 

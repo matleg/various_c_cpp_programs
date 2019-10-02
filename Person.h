@@ -2,31 +2,32 @@
 #include <string>
 #include <array>
 
-
 using namespace std;
-
-
-#ifndef INC_08_CLASSES_PERSON_H
-#define INC_08_CLASSES_PERSON_H
-
 
 class Person
 {
-    //private method
-    int findAge() const;  // const to be sure that age is not modified
 
+    //static : common to all instances
+    static int lifeExpectancy;
+
+    //private method
+    int findAge() const; // const to be sure that age is not modified
 
     // define public fields of instances
-    public:
-        string name_;
+public:
+    string name_;
 
-        int age;
+    int age;
 
-        void WhoAmI();
+    void WhoAmI();
 
+    const static int Mr = 0;
+    const static int Ms = 1;
+    int civility;
 
+    static int getLifeExpectancy();
 
+    int getPersonLE();
+
+    int getCivility();
 };
-
-
-#endif //INC_08_CLASSES_PERSON_H
