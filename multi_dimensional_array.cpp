@@ -5,10 +5,9 @@ using namespace std;
 int main()
 {
     int test_array1[3][2] =
-        {
-            {2, 3},
-            {4, 5},
-            {6, 7}};
+        {{2, 3},
+         {4, 5},
+         {6, 7}};
 
     cout << "array filled by hand\n";
     for (int i = 0; i < 3; ++i)
