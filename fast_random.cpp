@@ -31,6 +31,7 @@ int main()
     for (int i = 0; i < 1000; i++)
     {
         tab[getRandomInt(10)] += 1;
+        cout << getRandomInt(10) << endl;
     }
 
     for (int i = 0; i < 10; i++)
