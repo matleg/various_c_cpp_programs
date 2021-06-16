@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
     printf("\naddress_p_age : %p\n", &p_age);
     printf("address_p_age : %p\n", address_p_age);
     
-    printf("value at the address_p_age : %d\n", *address_p_age);
-    printf("value at the address of address_p_age : %p\n", **address_p_age);
+    printf("value at the address_p_age : %d\n", *address_p_age);  // decimal // == &age
+    printf("value at the address of address_p_age : %p\n", **address_p_age);  // hexa // ==age
     
     return 0;
 }
