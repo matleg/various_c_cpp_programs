@@ -54,7 +54,7 @@ ostream &operator<<(ostream &os, evalExam ev)
 {
     switch (ev)
     {
-    case evalExam ::Rejected:
+    case evalExam::Rejected:
         os << " you have been rejected";
         break;
 
