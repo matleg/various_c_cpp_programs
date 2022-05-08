@@ -24,7 +24,7 @@ class Person
 
     // define public fields of instances
 public:
-    string name_;
+    string name;
 
     int age;
 
@@ -44,8 +44,8 @@ public:
 
     // constructor
     Person();
-    Person(string name, int civility, int age);
-    Person(string name, int civility, int age, int no, string street, string city);
+    Person(string name_, int civility_, int age_);
+    Person(string name_, int civility_, int age_, int no, string street, string city);
 
     //destructor
     virtual ~Person();
@@ -72,7 +72,7 @@ void Person::WhoAmI()
         txtCivility = " nothing ";
     }
 
-    cout << typeid(this).name() << ": my name is " << txtCivility << "  " << name_ << "  and I am " << findAge() << " y.o.\n";
+    cout << typeid(this).name() << ": my name is " << txtCivility << "  " << name << "  and I am " << findAge() << " y.o.\n";
 
     if (address != nullptr)
         cout << "address " << address->no << ", " << address->street << ", " << address->city << endl;
@@ -109,12 +109,12 @@ Person::Person()
     address = nullptr;
 };
 
-Person::Person(string name, int civility, int age_) : name_(name), civility(civility), age(age_)
+Person::Person(string name_, int civility_, int age_) : name(name_), civility(civility_), age(age_)
 {
     address = nullptr;
 }
 
-Person::Person(string name, int civility, int age, int no, string street, string city) : Person(name, civility, age)
+Person::Person(string name_, int civility_, int age_, int no, string street, string city) : Person(name_, civility_, age_)
 {
     address = new Address(no, street, city);
 }
@@ -123,7 +123,7 @@ Person::Person(string name, int civility, int age, int no, string street, string
 
 Person::~Person()
 {
-    cout << "----deleted " << this->name_ << endl;
+    cout << "----deleted " << this->name << endl;
 
     if (address)
         delete address;
@@ -131,7 +131,7 @@ Person::~Person()
 
 //constructor by copy
 
-Person::Person(const Person &pers) : age(pers.age), name_(pers.name_), civility(pers.civility)
+Person::Person(const Person &pers) : age(pers.age), name(pers.name), civility(pers.civility)
 {
     cout << " ++ constructor by copy " << endl;
 
@@ -145,7 +145,7 @@ Person::Person(const Person &pers) : age(pers.age), name_(pers.name_), civility(
 Person &Person::operator=(const Person &p)
 {
     cout << " $$ $$ $$ constructor by copy assignment \n";
-    name_ = p.name_;
+    name = p.name;
     civility = p.civility;
     age = p.age;
 
@@ -212,7 +212,7 @@ int main()
     emp.WhoAmI();
 
     auto displayPersonName = [](Person &p) {
-        cout << p.name_ << endl;
+        cout << p.name << endl;
     };
 
     displayPersonName(emp);
